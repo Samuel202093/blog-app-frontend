@@ -63,16 +63,21 @@ const SavePost = ({item, section}) => {
 
       return (
         <form className={`p-1 bg-white text-black  border text-[12px] font-medium save-span ${user ? 'flex' : 'hidden'} gap-x-1 items-center cursor-pointer`}  onSubmit={()=> handleSavePost()}>
-         {savePost ?  
-          <button type='submit'>
-            <HiBadgeCheck/>
-            <span className='text-[12px]'>saved post</span>
-          </button>
-         :
+         {savePost== false ?  
+          // <button type='submit'>
+          //   <HiBadgeCheck/>
+          //   <span className='text-[12px]'>saved post</span>
+          // </button>
           <>
             <HiBadgeCheck/>
-            <span className='text-[12px]'>Already saved</span>
-          </>}
+            <span className='text-[12px]'>savedpost</span>
+          </>
+         : null
+          // <>
+          //   <HiBadgeCheck/>
+          //   <span className='text-[12px]'>saved-post</span>
+          // </>
+        }
         </form>
       )
     }
